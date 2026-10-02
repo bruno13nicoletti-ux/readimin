@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ECOHELPER | Pequenas atitudes, grandes mudanças</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            <span>🌿</span>
+            <strong>ECOHELPER</strong>
+        </div>
+
+        <nav>
+            <a href="#inicio">Início</a>
+            <a href="#ferramentas">Ferramentas</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#resultado">Resultado</a>
+        </nav>
+
+        <div class="score">
+            🌱 Pontos: {{ pontos }}
+        </div>
+
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero" id="inicio">
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+
+            <span class="tag">
+                🌱 JUNTOS POR UM FUTURO MELHOR
+            </span>
+
+            <h1>
+                Ajude o planeta
+                <span>com pequenas atitudes.</span>
+            </h1>
+
+            <p>
+                Faça escolhas mais conscientes, reduza seu impacto
+                no meio ambiente e contribua para um futuro
+                mais verde e sustentável.
+            </p>
+
+            <a href="#ferramentas" class="hero-button">
+                Começar agora →
+            </a>
+
+        </div>
+
+
+        <div class="hero-cards">
+
+            <div class="hero-card">
+                <div class="hero-icon">🌳</div>
+
+                <div>
+                    <strong>Mais árvores</strong>
+                    <p>
+                        Um planeta mais verde começa com você.
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="hero-card">
+                <div class="hero-icon">♻️</div>
+
+                <div>
+                    <strong>Menos resíduos</strong>
+                    <p>
+                        Reciclar é transformar o presente.
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="hero-card">
+                <div class="hero-icon">⚡</div>
+
+                <div>
+                    <strong>Mais consciência</strong>
+                    <p>
+                        Pequenas atitudes geram grandes mudanças.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= INTRO ================= -->
+
+    <section class="intro" id="sobre">
+
+        <div>
+            <span class="small-title">
+                🌿 NOSSA MISSÃO
+            </span>
+
+            <h2>
+                Um mundo mais
+                <span>verde e sustentável.</span>
+            </h2>
+        </div>
+
+        <p>
+            O ECOHELPER foi criado para ajudar você a tomar
+            atitudes mais sustentáveis no seu dia a dia.
+            Calcule seu impacto, aprenda a reciclar,
+            economize energia e registre suas ações ambientais.
+        </p>
+
+    </section>
+
+
+    <!-- ================= FERRAMENTAS ================= -->
+
+    <main id="ferramentas" class="tools">
+
+        <!-- 1 CARBONO -->
+
+        <section class="tool-card carbon">
+
+            <div class="tool-content">
+
+                <div class="tool-number">
+                    🌍
+                </div>
+
+                <div class="tool-text">
+
+                    <span class="small-title">
+                        IMPACTO AMBIENTAL
+                    </span>
+
+                    <h2>
+                        1 - Calcular minha pegada de carbono
+                    </h2>
+
+                    <p>
+                        Descubra uma estimativa das suas emissões
+                        semanais ao utilizar o carro.
+                    </p>
+
+
+                    <form method="POST">
+
+                        <input type="hidden" name="opcao" value="carbono">
+
+                        <div class="input-group">
+
+                            <input type="number" name="km" min="0" step="0.1" placeholder="Ex: 100" required>
+
+                            <button type="submit">
+                                Calcular →
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+            <div class="tool-decoration">
+                🚗
+            </div>
+
+        </section>
+
+
+        <!-- 2 RECICLAGEM -->
+
+        <section class="tool-card recycling">
+
+            <div class="tool-content">
+
+                <div class="tool-number">
+                    ♻️
+                </div>
+
+                <div class="tool-text">
+
+                    <span class="small-title">
+                        RECICLAGEM
+                    </span>
+
+                    <h2>
+                        2 - Como reciclar este lixo?
+                    </h2>
+
+                    <p>
+                        Selecione um tipo de resíduo para descobrir
+                        como descartá-lo corretamente.
+                    </p>
+
+
+                    <form method="POST">
+
+                        <input type="hidden" name="opcao" value="reciclagem">
+
+
+                        <div class="input-group">
+
+                            <select name="lixo">
+
+                                <option value="papel">
+                                    📄 Papel
+                                </option>
+
+                                <option value="plastico">
+                                    🧴 Plástico
+                                </option>
+
+                                <option value="vidro">
+                                    🍾 Vidro
+                                </option>
+
+                                <option value="metal">
+                                    🥫 Metal
+                                </option>
+
+                                <option value="organico">
+                                    🍎 Orgânico
+                                </option>
+
+                            </select>
+
+
+                            <button type="submit">
+                                Ver como reciclar →
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+            <div class="tool-decoration">
+                ♻️
+            </div>
+
+        </section>
+
+
+        <!-- 3 ENERGIA -->
+
+        <section class="tool-card energy">
+
+            <div class="tool-content">
+
+                <div class="tool-number">
+                    💡
+                </div>
+
+                <div class="tool-text">
+
+                    <span class="small-title">
+                        ENERGIA
+                    </span>
+
+                    <h2>
+                        3 - Dicas para economizar energia
+                    </h2>
+
+                    <p>
+                        Pequenas mudanças na rotina podem reduzir
+                        o desperdício de energia.
+                    </p>
+
+
+                    <form method="POST">
+
+                        <input type="hidden" name="opcao" value="energia">
+
+
+                        <button class="green-button" type="submit">
+
+                            Receber uma dica →
+
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+            <div class="tool-decoration">
+                ☀️
+            </div>
+
+        </section>
+
+
+        <!-- 4 ÁRVORE -->
+
+        <section class="tool-card tree">
+
+            <div class="tool-content">
+
+                <div class="tool-number">
+                    🌳
+                </div>
+
+                <div class="tool-text">
+
+                    <span class="small-title">
+                        REFLORESTAMENTO
+                    </span>
+
+                    <h2>
+                        4 - Registrar árvore plantada
+                    </h2>
+
+                    <p>
+                        Plantou uma árvore? Registre aqui e ganhe
+                        pontos ecológicos.
+                    </p>
+
+
+                    <form method="POST">
+
+                        <input type="hidden" name="opcao" value="arvore">
+
+
+                        <div class="input-group">
+
+                            <input type="text" name="arvore" placeholder="Nome ou espécie da árvore" required>
+
+                            <button type="submit">
+                                Registrar →
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+            <div class="tool-decoration">
+                🌱
+            </div>
+
+        </section>
+
+
+        <!-- 5 PONTUAÇÃO -->
+
+        <section class="tool-card score-card">
+
+            <div class="tool-content">
+
+                <div class="tool-number">
+                    ⭐
+                </div>
+
+                <div class="tool-text">
+
+                    <span class="small-title">
+                        SEU PROGRESSO
+                    </span>
+
+                    <h2>
+                        5 - Ver minha pontuação ecológica
+                    </h2>
+
+                    <p>
+                        Veja quantos pontos você conquistou
+                        ajudando o meio ambiente.
+                    </p>
+
+
+                    <form method="POST">
+
+                        <input type="hidden" name="opcao" value="pontos">
+
+
+                        <button class="green-button" type="submit">
+
+                            Ver minha pontuação →
+
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+            <div class="big-score">
+                {{ pontos }}
+                <span>pontos</span>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= RESULTADO ================= -->
+
+    <section class="result-section" id="resultado">
+
+        <div class="result-icon">
+            🌿
+        </div>
+
+        <div>
+
+            <span class="small-title">
+                ECOHELPER
+            </span>
+
+            <h2>Resultado</h2>
+
+            {% if resultado %}
+
+            <p class="result-text">
+                {{ resultado }}
+            </p>
+
+            {% else %}
+
+            <p>
+                Aqui aparecerão as respostas das suas ações.
+            </p>
+
+            {% endif %}
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= ESTATÍSTICAS ================= -->
+
+    <section class="stats">
+
+        <div>
+            <strong>🌳</strong>
+            <span>Plante árvores</span>
+        </div>
+
+        <div>
+            <strong>♻️</strong>
+            <span>Recicle mais</span>
+        </div>
+
+        <div>
+            <strong>⚡</strong>
+            <span>Economize energia</span>
+        </div>
+
+        <div>
+            <strong>🌍</strong>
+            <span>Proteja o planeta</span>
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-logo">
+            🌿 ECOHELPER
+        </div>
+
+        <p>
+            Um planeta mais verde depende de todos nós.
+        </p>
+
+        <div class="footer-links">
+
+            <span>🌱 Sustentabilidade</span>
+            <span>♻️ Reciclagem</span>
+            <span>⚡ Energia limpa</span>
+            <span>🌳 Mais árvores</span>
+
+        </div>
+
+        <small>
+            © 2026 ECOHELPER — Pequenas atitudes, grandes mudanças.
+        </small>
+
+    </footer>
+
+</body>
+
+</html>

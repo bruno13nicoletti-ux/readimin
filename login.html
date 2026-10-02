@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ECOHELPER - Login</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body class="login-page">
+
+    <div class="login-box">
+
+        <div class="login-logo">
+            🌿
+        </div>
+
+        <h1>ECOHELPER</h1>
+
+        <p>Entre na sua conta</p>
+
+
+        {% if mensagem %}
+
+        <div class="error">
+            {{ mensagem }}
+        </div>
+
+        {% endif %}
+
+
+        <form method="POST">
+
+            <input type="email" name="email" placeholder="Seu email" required>
+
+            <input type="password" name="senha" placeholder="Sua senha" required>
+
+            <button type="submit">
+                Entrar →
+            </button>
+
+        </form>
+
+
+        <p class="register-text">
+            Ainda não possui uma conta?
+        </p>
+
+        <a href="{{ url_for('cadastro') }}" class="register-link">
+
+            Criar conta
+
+        </a>
+
+    </div>
+
+</body>
+
+</html>
